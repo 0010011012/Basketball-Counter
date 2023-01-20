@@ -1,3 +1,4 @@
+score=0
 class Stat{
 constructor(){
     this.numgetroffen=0;
@@ -53,6 +54,7 @@ function setup(){
 }
 
 function zweierHit(){
+    score+1;
     stat_2er.getroffen();
     stat_gesamt.getroffen();     
 }
@@ -63,6 +65,7 @@ function zweiernoHit(){
 }
 
 function dreierHit(){
+    score+1,5;
     stat_3er.getroffen();
     stat_gesamt.getroffen();
 }
@@ -107,7 +110,7 @@ function draw(){
 
     textSize(32);
     fill(fill_a);
-    text("Punkte: "+stat_2er.getgetroffen()+stat_3er.getgetroffen()), 15 , 500);
+    text("Punkte: "+score, 15 , 500);
 }
 function keyPressed(){
     if(keyCode === LEFT_ARROW){
