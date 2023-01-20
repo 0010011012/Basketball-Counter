@@ -77,37 +77,37 @@ function draw(){
     background("black");
     textSize(32);
     fill(fill_a);
-    text("2er-Getroffen: "+stat_2er.getgetroffen(), 15 , 40);
+    text("2er-Getroffen: "+stat_2er.getgetroffen()/2, 15 , 40);
     textSize(32);
     fill(fill_a);
-    text("2er-Gesamt: "+stat_2er.getwuerfe(), 15 , 80);
+    text("2er-Gesamt: "+stat_2er.getwuerfe()/2, 15 , 80);
     textSize(32);
     fill(fill_a);
     text("2er-Quote: "+stat_2er.getquote()+"%", 15 , 120);
     
     textSize(32);
     fill(fill_a);
-    text("3er-Getroffen: "+stat_3er.getgetroffen(), 15 , 200);
+    text("3er-Getroffen: "+stat_3er.getgetroffen()/2, 15 , 200);
     textSize(32);
     fill(fill_a);
-    text("3er-Gesamt: "+stat_3er.getwuerfe(), 15 , 240);
+    text("3er-Gesamt: "+stat_3er.getwuerfe()/2, 15 , 240);
     textSize(32);
     fill(fill_a);
     text("3er-Quote: "+stat_3er.getquote()+"%", 15 , 280);
 
     textSize(32);
     fill(fill_a);
-    text("Gesamt-Getroffen: "+stat_gesamt.getgetroffen(), 15 , 360);
+    text("Gesamt-Getroffen: "+stat_gesamt.getgetroffen()/2, 15 , 360);
     textSize(32);
     fill(fill_a);
-    text("Wurf-Gesamt: "+stat_gesamt.getwuerfe(), 15 , 400);
+    text("Wurf-Gesamt: "+stat_gesamt.getwuerfe()/2, 15 , 400);
     textSize(32);
     fill(fill_a);
     text("Gesamt-Quote: "+stat_gesamt.getquote()+"%", 15 , 440);
 
     textSize(32);
     fill(fill_a);
-    text("Punkte: "+(stat_2er.getgetroffen()*2+stat_3er.getgetroffen()*3), 15 , 500);
+    text("Punkte: "+(stat_2er.getgetroffen()+stat_3er.getgetroffen()*1,5), 15 , 500);
 }
 function keyPressed(){
     if(keyCode === LEFT_ARROW){
