@@ -104,6 +104,10 @@ function draw(){
     textSize(32);
     fill(fill_a);
     text("Gesamt-Quote: "+stat_gesamt.getquote()+"%", 15 , 440);
+
+    textSize(32);
+    fill(fill_a);
+    text("Punkte: "+(stat_2er.getgetroffen()*2+stat_3er.getgetroffen()*3), 15 , 500);
 }
 function keyPressed(){
     if(keyCode === LEFT_ARROW){
