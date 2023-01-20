@@ -107,7 +107,7 @@ function draw(){
 
     textSize(32);
     fill(fill_a);
-    text("Punkte: "+(stat_2er.getgetroffen()+stat_3er.getgetroffen()*1,5), 15 , 500);
+    text("Punkte: "+(stat_2er.getgetroffen()+stat_3er.getgetroffen()), 15 , 500);
 }
 function keyPressed(){
     if(keyCode === LEFT_ARROW){
