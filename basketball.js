@@ -66,7 +66,7 @@ function zweiernoHit(){
 }
 
 function dreierHit(){
-    score=score+1,5;
+    score+=3;
     stat_3er.getroffen();
     stat_gesamt.getroffen();
 }
