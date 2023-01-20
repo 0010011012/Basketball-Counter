@@ -7,6 +7,9 @@ score6=0;
 fill_a="white"
 function setup(){
     createCanvas(1000,700);
+    button2er = createButton("2er-Getroffen");
+    button2er.position(700 , 500)
+    button2er.mousePressed(zweierHit)
 }
 
 function zweierHit(){
