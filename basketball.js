@@ -77,30 +77,30 @@ function draw(){
     background("black");
     textSize(32);
     fill(fill_a);
-    text("2er-Getroffen: "+stat_2er.getgetroffen()/2, 15 , 40);
+    text("2er-Getroffen: "+(stat_2er.getgetroffen()/2), 15 , 40);
     textSize(32);
     fill(fill_a);
-    text("2er-Gesamt: "+stat_2er.getwuerfe()/2, 15 , 80);
+    text("2er-Gesamt: "+(stat_2er.getwuerfe()/2), 15 , 80);
     textSize(32);
     fill(fill_a);
     text("2er-Quote: "+stat_2er.getquote()+"%", 15 , 120);
     
     textSize(32);
     fill(fill_a);
-    text("3er-Getroffen: "+stat_3er.getgetroffen()/2, 15 , 200);
+    text("3er-Getroffen: "+(stat_3er.getgetroffen()/2), 15 , 200);
     textSize(32);
     fill(fill_a);
-    text("3er-Gesamt: "+stat_3er.getwuerfe()/2, 15 , 240);
+    text("3er-Gesamt: "+(stat_3er.getwuerfe()/2), 15 , 240);
     textSize(32);
     fill(fill_a);
     text("3er-Quote: "+stat_3er.getquote()+"%", 15 , 280);
 
     textSize(32);
     fill(fill_a);
-    text("Gesamt-Getroffen: "+stat_gesamt.getgetroffen()/2, 15 , 360);
+    text("Gesamt-Getroffen: "+(stat_gesamt.getgetroffen()/2), 15 , 360);
     textSize(32);
     fill(fill_a);
-    text("Wurf-Gesamt: "+stat_gesamt.getwuerfe()/2, 15 , 400);
+    text("Wurf-Gesamt: "+(stat_gesamt.getwuerfe()/2), 15 , 400);
     textSize(32);
     fill(fill_a);
     text("Gesamt-Quote: "+stat_gesamt.getquote()+"%", 15 , 440);
