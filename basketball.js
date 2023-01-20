@@ -67,7 +67,7 @@ function zweiernoHit(){
 }
 
 function dreierHit(){
-    score2++++;
+    score2++;
     stat_3er.getroffen();
     stat_gesamt.getroffen();
 }
@@ -112,7 +112,7 @@ function draw(){
 
     textSize(32);
     fill(fill_a);
-    text("Punkte: "+(score1+score2/2), 15 , 500);
+    text("Punkte: "+(score1+score2*1,5), 15 , 500);
 }
 function keyPressed(){
     if(keyCode === LEFT_ARROW){
