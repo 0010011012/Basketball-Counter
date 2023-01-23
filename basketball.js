@@ -60,7 +60,7 @@ function zweierHit(){
     textSize(100);
     fill(fill_a);
     text("2er-Getroffen", 350 , 400);
-        stat_2er.getroffen();
+        debounce(()=>stat_2er.getroffen());
         stat_gesamt.getroffen();
 }
 
@@ -123,3 +123,11 @@ function keyPressed(){
         dreiernoHit()
     }
 }
+
+
+
+function debounce(func, timeout = 300){
+    let timer;
+      clearTimeout(timer);
+      timer = setTimeout(() => { func(); }, timeout);
+  }
