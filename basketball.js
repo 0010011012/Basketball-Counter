@@ -37,19 +37,19 @@ function setup(){
     button2er = createButton("2er-Getroffen");
     button2er.position(600 , 280)
     button2er.size(300,50)
-    button2er.mousePressed(zweierHit)
+    button2er.mouseReleased(zweierHit)
     button2ern = createButton("2er-nicht-Getroffen");
     button2ern.position(600 , 380)
     button2ern.size(300,50)
-    button2ern.mousePressed(zweiernoHit)
+    button2ern.mouseReleased(zweiernoHit)
     button3er = createButton("3er-Getroffen");
     button3er.position(600 , 480)
     button3er.size(300,50)
-    button3er.mousePressed(dreierHit)
+    button3er.mouseReleased(dreierHit)
     button3ern = createButton("3er-nicht-Getroffen");
     button3ern.position(600 , 580)
     button3ern.size(300,50)
-    button3ern.mousePressed(dreiernoHit)
+    button3ern.mouseReleased(dreiernoHit)
 }
 
 function zweierHit(){
