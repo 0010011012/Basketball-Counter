@@ -108,7 +108,7 @@ function draw(){
 
     text("Punkte:",15,500);
 
-    p = 100;
+    p = stat_2er.getscore()+stat_3er.getscore();
     punktetafel(p , 15 , 520)
 }
 function keyPressed(){
@@ -151,6 +151,14 @@ function debounce(func, timeout = 300){
     positionen=[
         ["WO", "N", "OO", "OU", "S", "WU"],
         ["OO" , "OU"],
+        ["OO" , "WU" , "N" , "S" , "AE"],
+        ["N" , "OO" , "OU" , "S" , "AE"],
+        ["WO" , "OO" , "OU" , "AE"],
+        ["WO" , "N" , "OU" , "S" , "AE"],
+        ["WO" , "N" , "OU" , "S" , "WU" , "AE"],
+        ["N" , "OO" , "OU"],
+        ["WO" , "N" , "OO" , "OU" , "S" , "WU" , "AE"],
+        ["WO" , "N" , "OO" , "OU" , "S" , "AE"]
 
     ];
     if(num==undefined){
