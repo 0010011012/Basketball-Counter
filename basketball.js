@@ -28,12 +28,6 @@ getquote(){
 }
 
 }
-score1=0;
-score2=0;
-score3=0;
-score4=0;
-score5=0;
-score6=0;
 stat_2er=new Stat();
 stat_3er=new Stat();
 stat_gesamt=new Stat();
@@ -62,21 +56,11 @@ function zweierHit(){
     textSize(100);
     fill(fill_a);
     text("2er-Getroffen", 350 , 400);
-    noLoop()
-    setTimeout(function(){
-		loop()
-	}, 1500)
-        score1++;
-        score2++;
-        score5++;
-        score6++;
         stat_2er.getroffen();
         stat_gesamt.getroffen();
 }
 
 function zweiernoHit(){
-    score2++;
-    score6++;
     stat_2er.vorbei();
     stat_gesamt.vorbei();
 }
@@ -85,21 +69,11 @@ function dreierHit(){
     textSize(100);
     fill(fill_a);
     text("3er-Getroffen", 350 , 400);
-    noLoop()
-    setTimeout(function(){
-		loop()
-	}, 1500)
-    score3++;
-    score4++;
-    score5++;
-    score6++;
     stat_3er.getroffen();
     stat_gesamt.getroffen();
 }
 
 function dreiernoHit(){
-    score4++;
-    score6++;
     stat_3er.vorbei();
     stat_gesamt.vorbei();
 }
