@@ -1,7 +1,8 @@
 class Stat{
-constructor(){
+constructor(wurfwert){
     this.numgetroffen=0;
     this.numvorbei=0;
+    this.wurfwert=wurfwert;
 }
 getgetroffen(){
     return this.numgetroffen;
@@ -26,11 +27,14 @@ getquote(){
     }
     return this.getgetroffen()/this.getwuerfe()*100;
 }
+getscore(){
+    return this.wurfwert*this.getgetroffen();
+}
 
 }
-stat_2er=new Stat();
-stat_3er=new Stat();
-stat_gesamt=new Stat();
+stat_2er=new Stat(2);
+stat_3er=new Stat(3);
+stat_gesamt=new Stat(0);
 fill_a="white"
 function setup(){
     createCanvas(1000,700);
@@ -84,32 +88,25 @@ function draw(){
     textSize(32);
     fill(fill_a);
     text("2er-Getroffen: "+stat_2er.getgetroffen(), 15 , 40);
-    textSize(32);
-    fill(fill_a);
+
     text("2er-Gesamt: "+stat_2er.getwuerfe(), 15 , 80);
-    textSize(32);
-    fill(fill_a);
+
     text("2er-Quote: "+stat_2er.getquote()+"%", 15 , 120);
-    
-    textSize(32);
-    fill(fill_a);
+
     text("3er-Getroffen: "+stat_3er.getgetroffen(), 15 , 200);
-    textSize(32);
-    fill(fill_a);
+
     text("3er-Gesamt: "+stat_3er.getwuerfe(), 15 , 240);
-    textSize(32);
-    fill(fill_a);
+
     text("3er-Quote: "+stat_3er.getquote()+"%", 15 , 280);
 
-    textSize(32);
-    fill(fill_a);
     text("Gesamt-Getroffen: "+stat_gesamt.getgetroffen(), 15 , 360);
-    textSize(32);
-    fill(fill_a);
+
     text("Wurf-Gesamt: "+stat_gesamt.getwuerfe(), 15 , 400);
-    textSize(32);
-    fill(fill_a);
+
     text("Gesamt-Quote: "+stat_gesamt.getquote()+"%", 15 , 440);
+
+    text("Punkte: "+(stat_2er.getscore()+stat_3er.getscore()), 15 , 500);
+
 }
 function keyPressed(){
     if(keyCode === LEFT_ARROW){
