@@ -87,6 +87,7 @@ function draw(){
     background("black");
     textSize(32);
     fill(fill_a);
+
     text("2er-Getroffen: "+stat_2er.getgetroffen(), 15 , 40);
 
     text("2er-Gesamt: "+stat_2er.getwuerfe(), 15 , 80);
@@ -105,8 +106,10 @@ function draw(){
 
     text("Gesamt-Quote: "+stat_gesamt.getquote()+"%", 15 , 440);
 
-    text("Punkte: "+(stat_2er.getscore()+stat_3er.getscore()), 15 , 500);
+    text("Punkte:",15,500);
 
+    p = 100;
+    punktetafel(p , 15 , 520)
 }
 function keyPressed(){
     if(keyCode === LEFT_ARROW){
@@ -130,4 +133,58 @@ function debounce(func, timeout = 300){
     let timer;
       clearTimeout(timer);
       timer = setTimeout(() => { func(); }, timeout);
+  }
+  function punktetafel(num , x , y){
+
+    var p = num + "";
+    translate(x-90,y)
+
+    for( var i = 0; i <= p.length; i++ )
+    {
+        var d = int( p[i] );
+        translate(90,0)
+        digitalanzeige(d);
+    }
+
+  }
+  function digitalanzeige(num){
+    positionen=[
+        ["WO", "N", "OO", "OU", "S", "WU"],
+        ["OO" , "OU"],
+
+    ];
+    if(num==undefined){
+        return
+    }
+    for(var i=0 ; i<positionen[num].length ; i++){
+        var pos=positionen[num][i]
+    if(pos=="WO"){
+    //westen oben
+    rect(0,10, 10,60);
+    }
+    if(pos=="N"){
+    //norden
+    rect(10,0, 60,10);
+    }
+    if(pos=="AE"){
+    //äquator
+    rect(10,70, 60,10);
+    }
+    if(pos=="OO"){
+    //osten oben
+    rect(70,10, 10,60);
+    }
+    if(pos=="WU"){
+    //westen unten
+    rect(0,80, 10,60)
+    }
+    if(pos=="OU"){
+    //osten unten
+    rect(70,80, 10,60)
+    }
+    if(pos=="S"){
+    //süden
+    rect(10,140, 60,10)
+    }
+    }
   }
