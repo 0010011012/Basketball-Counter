@@ -1,35 +1,3 @@
-class Stat{
-constructor(wurfwert){
-    this.numgetroffen=0;
-    this.numvorbei=0;
-    this.wurfwert=wurfwert;
-}
-getgetroffen(){
-    return this.numgetroffen;
-}
-getroffen(){
-    this.numgetroffen++;
-}
-getvorbei(){
-    return this.numvorbei;
-}
-vorbei(){
-    this.numvorbei++;
-}
-getwuerfe(){
-    return this.numvorbei+this.numgetroffen;
-}
-getquote(){
-    if(this.getwuerfe()==0){
-        return 0
-    }
-    return this.getgetroffen()/this.getwuerfe()*100;
-}
-getscore(){
-    return this.wurfwert*this.getgetroffen();
-}
-
-}
 stat_freethrow=new Stat(1)
 stat_2er=new Stat(2);
 stat_3er=new Stat(3);
@@ -73,35 +41,33 @@ function zweierHit(){
     fill(fill_a);
     text("2er-Getroffen", 350 , 400);
         debounce(()=>stat_2er.getroffen());
-        stat_gesamt.getroffen();
+        debounce(()=>stat_gesamt.getroffen());
 }
 
 function freethrowHit(){
-    stat_freethrow.getroffen();
-    stat_gesamt.getroffen();
+    debounce(()=>stat_gesamt.getroffen());
+    debounce(()=>stat_freethrow.getroffen());
 }
 
 function freethrownoHit(){
-    stat_freethrow.vorbei();
-    stat_gesamt.vorbei();
+    debounce(()=>stat_freethrow.vorbei());
+    debounce(()=>stat_gesamt.vorbei());
 }
 
 function zweiernoHit(){
-    stat_2er.vorbei();
-    stat_gesamt.vorbei();
+    debounce(()=>stat_gesamt.vorbei());
+    debounce(()=>stat_2er.vorbei());
+
 }
 
 function dreierHit(){
-    textSize(100);
-    fill(fill_a);
-    text("3er-Getroffen", 350 , 400);
-    stat_3er.getroffen();
-    stat_gesamt.getroffen();
+    debounce(()=>stat_gesamt.getroffen());
+    debounce(()=>stat_3er.getroffen());
 }
 
 function dreiernoHit(){
-    stat_3er.vorbei();
-    stat_gesamt.vorbei();
+    debounce(()=>stat_3er.vorbei());
+    debounce(()=>stat_gesamt.vorbei());
 }
 
 function draw(){
