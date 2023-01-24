@@ -8,14 +8,12 @@ getgetroffen(){
     return this.numgetroffen;
 }
 getroffen(){
-    console.log("getroffen")
     this.numgetroffen++;
 }
 getvorbei(){
     return this.numvorbei;
 }
 vorbei(){
-    console.log("vorbei")
     this.numvorbei++;
 }
 getwuerfe(){
@@ -32,6 +30,7 @@ getscore(){
 }
 
 }
+stat_freethrow=new Stat(1)
 stat_2er=new Stat(2);
 stat_3er=new Stat(3);
 stat_gesamt=new Stat(0);
@@ -39,21 +38,34 @@ fill_a="white"
 function setup(){
     createCanvas(1000,700);
     button2er = createButton("2er-Getroffen");
-    button2er.position(600 , 280)
+    button2er.position(640 , 280)
     button2er.size(300,50)
     button2er.mouseReleased(zweierHit)
+
     button2ern = createButton("2er-nicht-Getroffen");
-    button2ern.position(600 , 380)
+    button2ern.position(640 , 380)
     button2ern.size(300,50)
     button2ern.mouseReleased(zweiernoHit)
+
     button3er = createButton("3er-Getroffen");
-    button3er.position(600 , 480)
+    button3er.position(640 , 480)
     button3er.size(300,50)
     button3er.mouseReleased(dreierHit)
+
     button3ern = createButton("3er-nicht-Getroffen");
-    button3ern.position(600 , 580)
+    button3ern.position(640 , 580)
     button3ern.size(300,50)
     button3ern.mouseReleased(dreiernoHit)
+
+    buttonft = createButton("Freiwurf-Getroffen");
+    buttonft.position(640 , 80)
+    buttonft.size(300,50)
+    buttonft.mouseReleased(freethrowHit)
+
+    buttonftn = createButton("Freiwurf-nicht-Getroffen");
+    buttonftn.position(640 , 180)
+    buttonftn.size(300,50)
+    buttonftn.mouseReleased(freethrownoHit)
 }
 
 function zweierHit(){
@@ -62,6 +74,16 @@ function zweierHit(){
     text("2er-Getroffen", 350 , 400);
         debounce(()=>stat_2er.getroffen());
         stat_gesamt.getroffen();
+}
+
+function freethrowHit(){
+    stat_freethrow.getroffen();
+    stat_gesamt.getroffen();
+}
+
+function freethrownoHit(){
+    stat_freethrow.vorbei();
+    stat_gesamt.vorbei();
 }
 
 function zweiernoHit(){
@@ -108,7 +130,13 @@ function draw(){
 
     text("Punkte:",15,500);
 
-    p = stat_2er.getscore()+stat_3er.getscore();
+    text("Freiwurf-Getroffen: "+stat_freethrow.getgetroffen(), 290 , 40)
+
+    text("Freiwurf-Gesamt: "+stat_freethrow.getwuerfe(), 290 , 80);
+
+    text("Freiwurf-Quote: "+stat_freethrow.getquote()+"%", 290 , 120);
+
+    p = stat_2er.getscore()+stat_3er.getscore()+stat_freethrow.getscore();
     punktetafel(p , 15 , 520)
 }
 function keyPressed(){
@@ -125,11 +153,17 @@ function keyPressed(){
     if(keyCode === DOWN_ARROW){
         dreiernoHit()
     }
+    if(keyCode === 16){
+        freethrowHit()
+    }
+    if(keyCode === 13){
+        freethrownoHit()
+    }
 }
 
 
 
-function debounce(func, timeout = 300){
+function debounce(func, timeout = 20){
     let timer;
       clearTimeout(timer);
       timer = setTimeout(() => { func(); }, timeout);
