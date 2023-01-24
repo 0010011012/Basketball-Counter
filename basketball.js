@@ -163,10 +163,9 @@ function keyPressed(){
 
 
 
-function debounce(func, timeout = 20){
-    let timer;
-      clearTimeout(timer);
-      timer = setTimeout(() => { func(); }, timeout);
+function debounce(func, timeout = 20) {
+        if (event.type != 'mouseup') {return true}
+        func();
   }
   function punktetafel(num , x , y){
 
