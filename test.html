@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <script src="Stat.js"></script>
+    <link rel="stylesheet" href="test.css">
+   <script>
+    var stat_ft=new Stat(1)
+    var stat_2er=new Stat(2)
+    var stat_3er=new Stat(3)
+    var stat_gesamt=new Stat(0)
+
+    function zweiertreffer(){
+      stat_gesamt.getroffen();
+      stat_2er.getroffen();
+      updatedisplay();
+    }
+
+    function zweiervorbei(){
+      stat_gesamt.vorbei();
+      stat_2er.vorbei();
+      updatedisplay();
+    }
+
+
+
+
+    function dreiertreffer(){
+      stat_gesamt.getroffen();
+      stat_3er.getroffen();
+      updatedisplay();
+    }
+
+    function dreiervorbei(){
+      stat_gesamt.vorbei();
+      stat_3er.vorbei();
+      updatedisplay();
+    }
+
+    function fttreffer(){
+      stat_gesamt.getroffen();
+      stat_ft.getroffen();
+      updatedisplay();
+    }
+
+    function ftvorbei(){
+      stat_gesamt.vorbei();
+      stat_ft.vorbei();
+      updatedisplay();
+    }
+
+    function updatedisplay(){
+        document.getElementById( '2treffer' ).innerHTML = stat_2er.getgetroffen();
+        document.getElementById( '2nicht-treffer' ).innerHTML = stat_2er.getvorbei();
+        document.getElementById( '2gesamt' ).innerHTML = stat_2er.getgetroffen()+stat_2er.getvorbei();
+        document.getElementById( '2quote' ).innerHTML = stat_2er.getquote();
+
+        document.getElementById( '3treffer' ).innerHTML = stat_3er.getgetroffen();
+        document.getElementById( '3nicht-treffer' ).innerHTML = stat_3er.getvorbei();
+        document.getElementById( '3gesamt' ).innerHTML = stat_3er.getgetroffen()+stat_3er.getvorbei();
+        document.getElementById( '3quote' ).innerHTML = stat_3er.getquote();
+
+        document.getElementById( 'fttreffer' ).innerHTML = stat_ft.getgetroffen();
+        document.getElementById( 'ftnicht-treffer' ).innerHTML = stat_ft.getvorbei();
+        document.getElementById( 'ftgesamt' ).innerHTML = stat_ft.getgetroffen()+stat_ft.getvorbei();
+        document.getElementById( 'ftquote' ).innerHTML = stat_ft.getquote();
+
+        document.getElementById( 'gesamt-treffer' ).innerHTML = stat_gesamt.getgetroffen();
+        document.getElementById( 'gesamt-nicht-treffer' ).innerHTML = stat_gesamt.getvorbei();
+        document.getElementById( 'wuerfe-gesamt' ).innerHTML = stat_gesamt.getwuerfe();
+        document.getElementById( 'gesamtquote' ).innerHTML =stat_gesamt.getquote();
+
+        document.getElementById( 'punkt' ).innerHTML = stat_3er.getscore()+stat_2er.getscore()+stat_ft.getscore();
+    }
+   </script>
+
+  </head>
+  <body>  
+    <p>2er-Getroffen: <span id="2treffer">0</span></p>
+    <p>2er-Vorbei: <span id="2nicht-treffer">0</span></p>
+    <p>2er-Gesamt: <span id="2gesamt">0</span></p>
+    <p>2er-Quote: <span id="2quote">0</span>%</p>
+
+    <p>3er-Getroffen: <span id="3treffer">0</span></p>
+    <p>3er-Vorbei: <span id="3nicht-treffer">0</span></p>
+    <p>3er-Gesamt: <span id="3gesamt">0</span></p>
+    <p>3er-Quote: <span id="3quote">0</span>%</p>
+
+    <p>Freiwurf-Getroffen: <span id="fttreffer">0</span></p>
+    <p>Freiwurf-Vorbei: <span id="ftnicht-treffer">0</span></p>
+    <p>Freiwurf-Gesamt: <span id="ftgesamt">0</span></p>
+    <p>Freiwurf-Quote: <span id="ftquote">0</span>%</p>
+
+    <p>Gesamt-Getroffen: <span id="gesamt-treffer">0</span></p>
+    <p>Gesamt-Vorbei: <span id="gesamt-nicht-treffer">0</span></p>
+    <p>Wuerfe-Gesamt: <span id="wuerfe-gesamt">0</span></p>
+    <p>Gesamt-Quote: <span id="gesamtquote">0</span>%</p>
+
+
+    <p>Punkte: <span id="punkt">0</span></p>
+    <button href="#" onclick="zweiertreffer()">2er-Treffer</button>
+    <button href="#" onclick="zweiervorbei()">2er-Nicht Getroffen</button>
+    <button href="#" onclick="dreiertreffer()">3er-Treffer</button>
+    <button href="#" onclick="dreiervorbei()">3er-Nicht Getroffen</button>
+    <button href="#" onclick="fttreffer()">Freiwurf-Treffer</button>
+    <button href="#" onclick="ftvorbei()">Freiwurf-Nicht Getroffen</button>
+  </body>
+</html>

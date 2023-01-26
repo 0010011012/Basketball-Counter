@@ -8,7 +8,7 @@ function setup(){
     button2er = createButton("2er-Getroffen");
     button2er.position(640 , 280)
     button2er.size(300,50)
-    button2er.mouseReleased(zweierHit)
+    button2er.mouseReleased(()=>debounce(zweierHit))
 
     button2ern = createButton("2er-nicht-Getroffen");
     button2ern.position(640 , 380)
@@ -28,20 +28,20 @@ function setup(){
     buttonft = createButton("Freiwurf-Getroffen");
     buttonft.position(640 , 80)
     buttonft.size(300,50)
-    buttonft.mouseReleased(freethrowHit)
+    buttonft.mouseReleased(()=>debounce(freethrowHit))
 
     buttonftn = createButton("Freiwurf-nicht-Getroffen");
     buttonftn.position(640 , 180)
     buttonftn.size(300,50)
-    buttonftn.mouseReleased(freethrownoHit)
+    buttonftn.mouseReleased(()=>debounce(freethrownoHit))
 }
 
 function zweierHit(){
     textSize(100);
     fill(fill_a);
     text("2er-Getroffen", 350 , 400);
-        debounce(()=>stat_2er.getroffen());
-        debounce(()=>stat_gesamt.getroffen());
+    stat_2er.getroffen();
+    stat_gesamt.getroffen();
 }
 
 function freethrowHit(){
