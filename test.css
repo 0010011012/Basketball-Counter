@@ -1,3 +1,17 @@
 html{
-    background-color: royalblue;
+    background-color: whitesmoke;
+}
+#fttreffer{
+    font-weight: 600;
+}
+#gesamt{
+    font-size: 1.2em;
+}
+#container{
+    display:grid;
+    grid-template-columns: 30% 40% 30%;
+}
+button{
+    width: 14%;
+    height: 7%;
 }

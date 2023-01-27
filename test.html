@@ -3,38 +3,42 @@
     <script src="Stat.js"></script>
     <script src="test.js"></script>
     <link rel="stylesheet" href="test.css">
-   <script>
-   </script>
-
   </head>
   <body>  
+    <div id="container">
+    <div id="zweier" class="anzeige">
     <p>2er-Getroffen: <span id="2treffer">0</span></p>
     <p>2er-Vorbei: <span id="2nicht-treffer">0</span></p>
     <p>2er-Gesamt: <span id="2gesamt">0</span></p>
     <p>2er-Quote: <span id="2quote">0</span>%</p>
-
-    <p>3er-Getroffen: <span id="3treffer">0</span></p>
-    <p>3er-Vorbei: <span id="3nicht-treffer">0</span></p>
-    <p>3er-Gesamt: <span id="3gesamt">0</span></p>
-    <p>3er-Quote: <span id="3quote">0</span>%</p>
-
-    <p>Freiwurf-Getroffen: <span id="fttreffer">0</span></p>
-    <p>Freiwurf-Vorbei: <span id="ftnicht-treffer">0</span></p>
-    <p>Freiwurf-Gesamt: <span id="ftgesamt">0</span></p>
-    <p>Freiwurf-Quote: <span id="ftquote">0</span>%</p>
-
+  </div>
+  <div id="gesamt" class="anzeige">
     <p>Gesamt-Getroffen: <span id="gesamt-treffer">0</span></p>
     <p>Gesamt-Vorbei: <span id="gesamt-nicht-treffer">0</span></p>
     <p>Wuerfe-Gesamt: <span id="wuerfe-gesamt">0</span></p>
     <p>Gesamt-Quote: <span id="gesamtquote">0</span>%</p>
-
-
+  </div>
+  <div id="dreier" class="anzeige">
+    <p>3er-Getroffen: <span id="3treffer">0</span></p>
+    <p>3er-Vorbei: <span id="3nicht-treffer">0</span></p>
+    <p>3er-Gesamt: <span id="3gesamt">0</span></p>
+    <p>3er-Quote: <span id="3quote">0</span>%</p>
+    </div>
+    <div id="freethrow" class="anzeige">
+    <p>Freiwurf-Getroffen: <span id="fttreffer">0</span></p>
+    <p>Freiwurf-Vorbei: <span id="ftnicht-treffer">0</span></p>
+    <p>Freiwurf-Gesamt: <span id="ftgesamt">0</span></p>
+    <p>Freiwurf-Quote: <span id="ftquote">0</span>%</p>
+  </div>
+</div>
     <p>Punkte: <span id="punkt">0</span></p>
+    <nav>
     <button href="#" onclick="zweiertreffer()">2er-Treffer</button>
     <button href="#" onclick="zweiervorbei()">2er-Nicht Getroffen</button>
     <button href="#" onclick="dreiertreffer()">3er-Treffer</button>
     <button href="#" onclick="dreiervorbei()">3er-Nicht Getroffen</button>
     <button href="#" onclick="fttreffer()">Freiwurf-Treffer</button>
     <button href="#" onclick="ftvorbei()">Freiwurf-Nicht Getroffen</button>
+    </nav>
   </body>
 </html>
